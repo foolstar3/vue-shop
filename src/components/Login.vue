@@ -9,11 +9,11 @@
       <el-form class="login_form" :model="loginForm" :rules="loginFormRules" ref="loginForm">
         <!-- 用户名 -->
         <el-form-item prop="username">
-          <el-input prefix-icon="iconfont icon-user" v-model="loginForm.username"></el-input>
+          <el-input prefix-icon="iconfont icon-yonghu" v-model="loginForm.username"></el-input>
         </el-form-item>
         <!-- 密码 -->
         <el-form-item prop="password">
-          <el-input prefix-icon="iconfont icon-lock" v-model="loginForm.password" type="password"></el-input>
+          <el-input prefix-icon="iconfont icon-mima" v-model="loginForm.password" type="password"></el-input>
         </el-form-item>
         <!-- 按钮区域 -->
         <el-form-item class="btns">
@@ -53,7 +53,7 @@ export default {
     login() {
       this.$refs.loginForm.validate(async valid => {
         if (!valid) return;
-        // await和async方法，$http方法在main.js里通过axios定义
+        // await和async方法处理异步方法，$http方法在main.js里通过axios定义
         const { data: res } = await this.$http.post("login", this.loginForm);
         if (res.meta.status !== 200)
           // $message在element.js里加入vue原型

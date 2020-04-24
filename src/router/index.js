@@ -14,7 +14,12 @@ const routes = [
   },
   {
     path: "/home",
-    component: resolve => require(['../components/Home.vue'],resolve)
+    component: resolve => require(['../components/Home.vue'],resolve),
+    redirect: '/welcome',
+    children: [
+      { path: '/welcome', component: resolve => require(['../components/Welcome.vue'],resolve) },
+      { path: '/users', component: resolve => require(['../components/users/Users.vue'],resolve) }
+    ]
   }
 ]
 
