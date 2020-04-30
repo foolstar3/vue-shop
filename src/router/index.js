@@ -20,7 +20,8 @@ const routes = [
       { path: '/welcome', component: resolve => require(['../components/Welcome.vue'],resolve) },
       { path: '/users', component: resolve => require(['../components/users/Users.vue'],resolve) },
       { path: '/rights', component: resolve => require(['../components/power/Rights.vue'],resolve)},
-      { path: '/roles', component: resolve => require(['../components/power/Roles.vue'],resolve)}
+      { path: '/roles', component: resolve => require(['../components/power/Roles.vue'],resolve)},
+      { path: '/categories', component: resolve => require(['../components/goods/Cate.vue'],resolve)}
     ]
   }
 ]
