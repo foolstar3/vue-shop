@@ -1,12 +1,5 @@
 <template>
   <div>
-    <!-- 导航面包屑 -->
-    <el-breadcrumb separator-class="el-icon-arrow-right">
-        <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-        <el-breadcrumb-item>商品管理</el-breadcrumb-item>
-        <el-breadcrumb-item>分类参数</el-breadcrumb-item>
-    </el-breadcrumb>
-    
     <!-- 卡片视图 -->
     <el-card>
       <!-- 警告区域 -->
@@ -106,7 +99,7 @@
       center
       @close="addDialogClosed">
       <el-form label-width="100" :model="addManyParamsForm" ref="addParamsFormRef" :rules="addManyParamsFormRules">
-        <el-form-item :label="titleText" prop="attr_name">
+        <el-form-item :label="titleText" prop="attr_name" label-width="80px">
           <el-input v-model="addManyParamsForm.attr_name"></el-input>
         </el-form-item>
       </el-form>
@@ -124,7 +117,7 @@
       center
       @close="editParamsDialogClosed">
       <el-form label-width="100" :model="editParamsForm" ref="editParamsFormRef" :rules="editParamsFormRules">
-        <el-form-item :label="titleText" prop="attr_name">
+        <el-form-item :label="titleText" prop="attr_name" label-width="80px">
           <el-input v-model="editParamsForm.attr_name"></el-input>
         </el-form-item>
       </el-form>
@@ -223,7 +216,7 @@ export default {
       }
       res.data.forEach(item => {
         // 将参数标签数据数组化
-        item.attr_vals = item.attr_vals ? item.attr_vals.split(' ') : []
+        item.attr_vals = item.attr_vals ? item.attr_vals.split(',') : []
         // 控制输入框的显示与隐藏
         item.inputVisible = false
         // 输入框的值
@@ -371,7 +364,7 @@ export default {
         {
           attr_name: row.attr_name,
           attr_sel: row.attr_sel,
-          attr_vals: row.attr_vals.join(' ') 
+          attr_vals: row.attr_vals.join(',') 
         }
       )
       console.log(res);

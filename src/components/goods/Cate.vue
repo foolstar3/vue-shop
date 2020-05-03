@@ -1,13 +1,5 @@
 <template>
     <div>
-
-        <!-- 导航面包屑 -->
-        <el-breadcrumb separator-class="el-icon-arrow-right">
-            <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-            <el-breadcrumb-item>商品管理</el-breadcrumb-item>
-            <el-breadcrumb-item>商品分类</el-breadcrumb-item>
-        </el-breadcrumb>
-
         <!-- 卡片视图区域 -->
         <el-card shadow="hover">
             <el-button type="primary" @click="showAddCateDialog">添加分类</el-button>
@@ -64,7 +56,7 @@
             >
                 <!-- 添加分类的表单主体内容 -->
                 <el-form :model="addCateForm" label-width="80px" :rules="addFormRules" ref="addCateFormRef">
-                    <el-form-item prop="cat_name" label="分类名称">
+                    <el-form-item prop="cat_name" label="分类名称" label-width="80px">
                         <el-input v-model="addCateForm.cat_name"></el-input>
                     </el-form-item>
                     <el-form-item label="父级分类">
@@ -93,7 +85,7 @@
               @close="editCateDialogClosed"
             >
                 <el-form ref="editCateDialogRef" :model="editCateForm" :rules="editCateFormRules">
-                    <el-form-item label="分类名称" prop="cat_name">
+                    <el-form-item label="分类名称" prop="cat_name" label-width="80px">
                         <el-input v-model="editCateForm.cat_name"></el-input>
                     </el-form-item>
                 </el-form>

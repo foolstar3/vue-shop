@@ -19,10 +19,12 @@ const routes = [
     children: [
       { path: '/welcome', component: resolve => require(['../components/Welcome.vue'],resolve) },
       { path: '/users', component: resolve => require(['../components/users/Users.vue'],resolve) },
-      { path: '/rights', component: resolve => require(['../components/power/Rights.vue'],resolve)},
-      { path: '/roles', component: resolve => require(['../components/power/Roles.vue'],resolve)},
-      { path: '/categories', component: resolve => require(['../components/goods/Cate.vue'],resolve)},
-      { path: '/params', component: resolve => require(['../components/goods/Params.vue'],resolve)}
+      { path: '/rights', component: resolve => require(['../components/power/Rights.vue'],resolve) },
+      { path: '/roles', component: resolve => require(['../components/power/Roles.vue'],resolve) },
+      { path: '/categories', component: resolve => require(['../components/goods/Cate.vue'],resolve) },
+      { path: '/params', component: resolve => require(['../components/goods/Params.vue'],resolve) },
+      { path: '/goods', component: resolve => require(['../components/goods/Goods.vue'],resolve) },
+      { path: '/goods/add', component: resolve => require(['../components/goods/Add.vue'],resolve) }
     ]
   }
 ]
