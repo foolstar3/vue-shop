@@ -81,7 +81,7 @@
         width="50%"
         @close="progressDialogClosed">
         <!-- 内容区域 -->
-        <el-timeline :reverse="reverse">
+        <el-timeline>
           <el-timeline-item
             v-for="(activity, index) in progressList"
             :key="index"
