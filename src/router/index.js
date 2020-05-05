@@ -2,7 +2,21 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
+const Login = () => import(/* webpackChunkName: "Login_Home_Welcome" */ '../components/Login.vue')
+const Home = () => import(/* webpackChunkName: "Login_Home_Welcome" */ '../components/Home.vue')
+const Welcome = () => import(/* webpackChunkName: "Login_Home_Welcome" */ '../components/Welcome.vue')
 
+const Users = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/users/Users.vue')
+const Rights = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/power/Rights.vue')
+const Roles = () => import(/* webpackChunkName: "Users_Rights_Roles" */ '../components/power/Roles.vue')
+
+const Cate = () => import(/* webpackChunkName: "Cate_Add_Goods_Params" */ '../components/goods/Cate.vue')
+const Add = () => import(/* webpackChunkName: "Cate_Add_Goods_Params" */ '../components/goods/Add.vue')
+const Goods = () => import(/* webpackChunkName: "Cate_Add_Goods_Params" */ '../components/goods/Goods.vue')
+const Params = () => import(/* webpackChunkName: "Cate_Add_Goods_Params" */ '../components/goods/Params.vue')
+
+const Order = () => import(/* webpackChunkName: "Order_Report" */ '../components/order/Order.vue')
+const Report = () => import(/* webpackChunkName: "Order_Report" */ '../components/report/Report.vue')
 const routes = [
   {
     path: '/',
@@ -17,16 +31,16 @@ const routes = [
     component: resolve => require(['../components/Home.vue'],resolve),
     redirect: '/welcome',
     children: [
-      { path: '/welcome', component: resolve => require(['../components/Welcome.vue'],resolve) },
-      { path: '/users', component: resolve => require(['../components/users/Users.vue'],resolve) },
-      { path: '/rights', component: resolve => require(['../components/power/Rights.vue'],resolve) },
-      { path: '/roles', component: resolve => require(['../components/power/Roles.vue'],resolve) },
-      { path: '/categories', component: resolve => require(['../components/goods/Cate.vue'],resolve) },
-      { path: '/params', component: resolve => require(['../components/goods/Params.vue'],resolve) },
-      { path: '/goods', component: resolve => require(['../components/goods/Goods.vue'],resolve) },
-      { path: '/goods/add', component: resolve => require(['../components/goods/Add.vue'],resolve) },
-      { path: '/orders', component: resolve => require(['../components/order/Order.vue'],resolve) },
-      { path: '/reports', component: resolve => require(['../components/report/Report.vue'],resolve) }
+      { path: '/welcome', component: Welcome },
+      { path: '/users', component: Users },
+      { path: '/rights', component: Rights },
+      { path: '/roles', component: Roles },
+      { path: '/categories', component: Cate },
+      { path: '/params', component: Params },
+      { path: '/goods', component: Goods },
+      { path: '/goods/add', component: Add },
+      { path: '/orders', component: Order },
+      { path: '/reports', component: Report }
     ]
   }
 ]
